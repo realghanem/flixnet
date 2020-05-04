@@ -1,0 +1,23 @@
+{% extends "movies/base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <!-- Movie  -->
+            {% for movie in movies %}
+                <div class="col-md-3 movie-grid">
+                    <div class="poster">
+                        <a href="{{ movie.videoLink }}">
+                            <img src="{{ movie.posterLink }}" class="w-100">
+                            <div class="overlay">
+                                <div class="detail text-center">View Details</div>
+                            </div>
+                        </a>
+                    </div>
+                    <h5 class="text-center">{{ movie.title }}</h5>
+                    <h6 class="text-center genre">{{ movie.genre }}</h6>
+                    <a href="{{ movie.videoLink }}" class="btn watch">WATCH</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
